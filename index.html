@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="comandosgit.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos de Git</title>
+</head>
+<body>
+
+<div id="comandos-container">
+    <h1 id="comandos-title">Glosario de Comandos Git por Categoría</h1>
+</div>
+
+<div class="category-section">
+<h2>Configuración:</h2>
+<table>
+    <tr>
+        <th>Comando</th>
+        <th>Descripción</th>
+        <th>Parámetros y descripción de los mismos</th>
+        <th>Ejemplo</th>
+    </tr>
+    <tr>
+        <td>git config</td>
+        <td>Configura opciones de Git en el sistema local</td>
+        <td>--global para configuración global, --local para configuración de repositorio</td>
+        <td>git config --global user.name "Tu Nombre"</td>
+    </tr>
+    <tr>
+        <td>git config --list</td>
+        <td>Muestra todas las configuraciones</td>
+        <td>Ninguno</td>
+        <td>git config --list</td>
+    </tr>
+</table>
+</div>
+
+<div class="category-section">
+<h2>Inicialización:</h2>
+<table>
+    <tr>
+        <th>Comando</th>
+        <th>Descripción</th>
+        <th>Parámetros y descripción de los mismos</th>
+        <th>Ejemplo</th>
+    </tr>
+    <tr>
+        <td>git init</td>
+        <td>Inicializa un nuevo repositorio Git en un directorio</td>
+        <td>Ninguno</td>
+        <td>git init</td>
+    </tr>
+    <tr>
+        <td>git clone</td>
+        <td>Clona un repositorio remoto en tu sistema local</td>
+        <td>URL del repositorio remoto (ej. https://github.com/user/repo.git)</td>
+        <td>git clone https://github.com/user/repo.git</td>
+    </tr>
+    <tr>
+        <td>git clone --depth 1</td>
+        <td>Clona un repositorio con la última revisión</td>
+        <td>--depth para especificar la profundidad de clonación (ej. 1 para la última revisión)</td>
+        <td>git clone --depth 1 https://github.com/user/repo.git</td>
+    </tr>
+</table>
+</div>
+
+<div class="category-section">
+<h2>Escenario:</h2>
+<table>
+    <tr>
+        <th>Comando</th>
+        <th>Descripción</th>
+        <th>Parámetros y descripción de los mismos</th>
+        <th>Ejemplo</th>
+    </tr>
+    <tr>
+        <td>git add</td>
+        <td>Agrega cambios al área de preparación</td>
+        <td>Nombre de archivo o directorio para agregar cambios</td>
+        <td>git add archivo.txt</td>
+    </tr>
+    <tr>
+        <td>git commit</td>
+        <td>Registra cambios en el repositorio local</td>
+        <td>-m para especificar un mensaje de commit</td>
+        <td>git commit -m "Mensaje de commit"</td>
+    </tr>
+    <tr>
+        <td>git reset</td>
+        <td>Desecha cambios en el área de preparación</td>
+        <td>--soft para mantener los cambios en el directorio de trabajo, --hard para eliminar cambios también</td>
+        <td>git reset HEAD archivo.txt</td>
+    </tr>
+    <tr>
+        <td>git stash</td>
+        <td>Almacena temporalmente cambios no comprometidos</td>
+        <td>save para almacenar los cambios con un mensaje</td>
+        <td>git stash save "Mensaje"</td>
+    </tr>
+</table>
+</div>
+
+<div class="category-section">
+<h2>Ramas:</h2>
+<table>
+    <tr>
+        <th>Comando</th>
+        <th>Descripción</th>
+        <th>Parámetros y descripción de los mismos</th>
+        <th>Ejemplo</th>
+    </tr>
+    <tr>
+        <td>git branch</td>
+        <td>Muestra la lista de ramas</td>
+        <td>-a para mostrar todas las ramas, -d para eliminar una rama</td>
+        <td>git branch</td>
+    </tr>
+    <tr>
+        <td>git checkout</td>
+        <td>Cambia de rama o de punto en la historia</td>
+        <td>Nombre de rama o hash de commit para cambiar a una rama o punto específico</td>
+        <td>git checkout nombre_rama</td>
+    </tr>
+    <tr>
+        <td>git merge</td>
+        <td>Fusiona cambios de una rama en otra</td>
+        <td>Nombre de la rama a fusionar</td>
+        <td>git merge rama_a_fusionar</td>
+    </tr>
+    <tr>
+        <td>git rebase</td>
+        <td>Reescribe la historia combinando cambios de otra rama</td>
+        <td>Nombre de la rama para rebasear</td>
+        <td>git rebase otra_rama</td>
+    </tr>
+    <tr>
+        <td>git branch -m</td>
+        <td>Renombra una rama existente</td>
+        <td>Nuevo nombre para la rama</td>
+        <td>git branch -m nombre_nuevo</td>
+    </tr>
+    <tr>
+        <td>git branch -c</td>
+        <td>Crea una nueva rama y se cambia a ella</td>
+        <td>Nombre de la nueva rama</td>
+        <td>git branch -c nueva_rama</td>
+    </tr>
+    <tr>
+        <td>git branch -u</td>
+        <td>Establece la rama de seguimiento de una rama local</td>
+        <td>rama_local rama_remota para establecer una relación de seguimiento</td>
+        <td>git branch -u rama_local rama_remota</td>
+    </tr>
+</table>
+</div>
+
+<div class="category-section">
+<h2>Inspeccionar y Comparar:</h2>
+<table>
+    <tr>
+        <th>Comando</th>
+        <th>Descripción</th>
+        <th>Parámetros y descripción de los mismos</th>
+        <th>Ejemplo</th>
+    </tr>
+    <tr>
+        <td>git status</td>
+        <td>Muestra el estado actual de los archivos</td>
+        <td>Ninguno</td>
+        <td>git status</td>
+    </tr>
+    <tr>
+        <td>git log</td>
+        <td>Muestra un registro de commits</td>
+        <td>Varios opciones como --oneline, --graph, etc.</td>
+        <td>git log --oneline</td>
+    </tr>
+    <tr>
+        <td>git log --graph</td>
+        <td>Muestra un registro de commits con gráfico de ramas</td>
+        <td>Ninguno</td>
+        <td>git log --graph</td>
+    </tr>
+    <tr>
+        <td>git diff</td>
+        <td>Muestra las diferencias entre áreas</td>
+        <td>--staged para ver las diferencias en el área de preparación</td>
+        <td>git diff</td>
+    </tr>
+    <tr>
+        <td>git blame</td>
+        <td>Muestra quién modificó cada línea de un archivo</td>
+        <td>Nombre del archivo</td>
+        <td>git blame archivo.txt</td>
+    </tr>
+    <tr>
+        <td>git show</td>
+        <td>Muestra información detallada sobre un commit</td>
+        <td>hash_commit para mostrar información de un commit específico</td>
+        <td>git show hash_commit</td>
+    </tr>
+    <tr>
+        <td>git reflog</td>
+        <td>Muestra un registro de acciones de referencia</td>
+        <td>Varios opciones como --all para ver todas las acciones</td>
+        <td>git reflog</td>
+    </tr>
+</table>
+</div>
+
+<div class="category-section">
+<h2>Seguimiento de los Cambios:</h2>
+<table>
+    <tr>
+        <th>Comando</th>
+        <th>Descripción</th>
+        <th>Parámetros y descripción de los mismos</th>
+        <th>Ejemplo</th>
+    </tr>
+    <tr>
+        <td>git add</td>
+        <td>Agrega cambios al área de preparación</td>
+        <td>Nombre de archivo o directorio para agregar cambios</td>
+        <td>git add archivo.txt</td>
+    </tr>
+    <tr>
+        <td>git commit</td>
+        <td>Registra cambios en el repositorio local</td>
+        <td>-m para especificar un mensaje de commit</td>
+        <td>git commit -m "Mensaje de commit"</td>
+    </tr>
+    <tr>
+        <td>git reset</td>
+        <td>Desecha cambios en el área de preparación</td>
+        <td>--soft para mantener los cambios en el directorio de trabajo, --hard para eliminar cambios también</td>
+        <td>git reset HEAD archivo.txt</td>
+    </tr>
+    <tr>
+        <td>git checkout</td>
+        <td>Descarta cambios no comprometidos en el directorio de trabajo</td>
+        <td>Nombre de archivo para descartar cambios</td>
+        <td>git checkout archivo.txt</td>
+    </tr>
+    <tr>
+        <td>git reset --hard</td>
+        <td>Elimina todos los cambios locales y vuelve al último commit</td>
+        <td>Ninguno</td>
+        <td>git reset --hard</td>
+    </tr>
+</table>
+</div>
+
+<div class="category-section">
+<h2>Ignorando los Patrones:</h2>
+<table>
+    <tr>
+        <th>Comando</th>
+        <th>Breve descripción</th>
+        <th>Parámetros y descripción de los mismos</th>
+        <th>Ejemplo</th>
+    </tr>
+    <tr>
+        <td>.gitignore</td>
+        <td>Archivo para especificar patrones de archivos a ignorar</td>
+        <td>Patrones de archivos o directorios que se deben ignorar</td>
+        <td>Crear o editar un archivo .gitignore con patrones de archivos a ignorar</td>
+    </tr>
+    <tr>
+        <td>git clean</td>
+        <td>Elimina archivos no rastreados en el directorio de trabajo</td>
+        <td>-n para ver qué archivos se eliminarán, -f para eliminar definitivamente</td>
+        <td>git clean -n, git clean -f</td>
+    </tr>
+</table>
+</div>
+
+<div class="category-section">
+<h2>Compartir y Actualizar:</h2>
+<table>
+    <tr>
+        <th>Comando</th>
+        <th>Descripción</th>
+        <th>Parámetros y descripción de los mismos</th>
+        <th>Ejemplo</th>
+    </tr>
+    <tr>
+        <td>git remote</td>
+        <td>Muestra y administra repositorios remotos</td>
+        <td>add, remove, rename, set-url, show, etc.</td>
+        <td>git remote add origin URL, git remote -v</td>
+    </tr>
+    <tr>
+        <td>git fetch</td>
+        <td>Obtiene cambios del repositorio remoto sin fusionarlos</td>
+        <td>Nombre del repositorio remoto (por defecto, origin)</td>
+        <td>git fetch origin</td>
+    </tr>
+    <tr>
+        <td>git push</td>
+        <td>Envía cambios locales al repositorio remoto</td>
+        <td>Nombre del repositorio remoto y rama a la que se desea enviar los cambios</td>
+        <td>git push origin master</td>
+    </tr>
+    <tr>
+        <td>git pull --rebase</td>
+        <td>Obtiene cambios y aplica rebase en lugar de merge</td>
+        <td>Ninguno</td>
+        <td>git pull --rebase origin rama</td>
+    </tr>
+    <tr>
+        <td>git fetch --prune</td>
+        <td>Elimina referencias remotas obsoletas</td>
+        <td>Ninguno</td>
+        <td>git fetch --prune</td>
+    </tr>
+    <tr>
+        <td>git remote add upstream</td>
+        <td>Agrega un repositorio remoto adicional</td>
+        <td>nombre_repositorio URL para agregar un nuevo repositorio remoto</td>
+        <td>git remote add upstream URL</td>
+    </tr>
+<table>
+</div>
+
+<div class="category-section">
+    <h2>Tags:</h2>
+    <table>
+        <tr>
+            <th>Comando</th>
+            <th>Descripción</th>
+            <th>Parámetros y descripción de los mismos</th>
+            <th>Ejemplo</th>
+        </tr>
+        <tr>
+            <td>git tag</td>
+            <td>Muestra la lista de tags</td>
+            <td>Ninguno</td>
+            <td>git tag</td>
+        </tr>
+        <tr>
+            <td>git tag nombre_tag</td>
+            <td>Crea un nuevo tag en el commit actual</td>
+            <td>Nombre del tag</td>
+            <td>git tag v1.0</td>
+        </tr>
+        <tr>
+            <td>git tag -a nombre_tag -m "Mensaje"</td>
+            <td>Crea un nuevo tag anotado con un mensaje</td>
+            <td>Nombre del tag y mensaje</td>
+            <td>git tag -a v1.1 -m "Versión 1.1"</td>
+        </tr>
+        <tr>
+            <td>git show nombre_tag</td>
+            <td>Muestra información sobre un tag específico</td>
+            <td>Nombre del tag</td>
+            <td>git show v1.0</td>
+        </tr>
+        <tr>
+            <td>git push origin nombre_tag</td>
+            <td>Envía un tag al repositorio remoto</td>
+            <td>Nombre del tag</td>
+            <td>git push origin v1.0</td>
+        </tr>
+        <tr>
+            <td>git checkout nombre_tag</td>
+            <td>Cambia a un commit asociado a un tag específico</td>
+            <td>Nombre del tag</td>
+            <td>git checkout v1.0</td>
+        </tr>
+        <tr>
+            <td>git tag -d nombre_tag</td>
+            <td>Elimina un tag localmente</td>
+            <td>Nombre del tag</td>
+            <td>git tag -d v1.0</td>
+        </tr>
+        <tr>
+            <td>git push --delete origin nombre_tag</td>
+            <td>Elimina un tag de un repositorio remoto</td>
+            <td>Nombre del tag</td>
+            <td>git push --delete origin v1.0</td>
+        </tr>
+    </table>
+</div>
+
+<div class="category-section">
+    <h2>Reescribir la Historia:</h2>
+    <table>
+        <tr>
+            <th>Comando</th>
+            <th>Descripción</th>
+            <th>Parámetros y descripción de los mismos</th>
+            <th>Ejemplo</th>
+        </tr>
+        <tr>
+            <td>git commit --amend</td>
+            <td>Modifica el último commit</td>
+            <td>--no-edit para mantener el mensaje de commit anterior</td>
+            <td>git commit --amend</td>
+        </tr>
+        <tr>
+            <td>git rebase -i</td>
+            <td>Reorganiza y edita commits en una rama</td>
+            <td>-i para realizar una reorganización interactiva</td>
+            <td>git rebase -i HEAD~3</td>
+        </tr>
+        <tr>
+            <td>git reset</td>
+            <td>Mueve la rama actual a un commit específico</td>
+            <td>--soft para mantener los cambios en el área de preparación, --hard para eliminar cambios también</td>
+            <td>git reset HEAD~2</td>
+        </tr>
+        <tr>
+            <td>git reflog</td>
+            <td>Muestra un registro de acciones de referencia</td>
+            <td>Varios opciones como --all para ver todas las acciones</td>
+            <td>git reflog</td>
+        </tr>
+    </table>
+</div>
+
+<div class="category-section">
+    <h2>Commits Temporales:</h2>
+    <table>
+        <tr>
+            <th>Comando</th>
+            <th>Descripción</th>
+            <th>Parámetros y descripción de los mismos</th>
+            <th>Ejemplo</th>
+        </tr>
+        <tr>
+            <td>git stash</td>
+            <td>Almacena temporalmente cambios no comprometidos</td>
+            <td>save para almacenar los cambios con un mensaje</td>
+            <td>git stash save "Mensaje"</td>
+        </tr>
+        <tr>
+            <td>git stash list</td>
+            <td>Muestra la lista de cambios almacenados en el stash</td>
+            <td>Ninguno</td>
+            <td>git stash list</td>
+        </tr>
+        <tr>
+            <td>git stash apply</td>
+            <td>Aplica los cambios almacenados en el stash</td>
+            <td>Nombre del stash (opcional)</td>
+            <td>git stash apply stash@{0}</td>
+        </tr>
+        <tr>
+            <td>git stash pop</td>
+            <td>Aplica y elimina los cambios almacenados en el stash</td>
+            <td>Nombre del stash (opcional)</td>
+            <td>git stash pop stash@{1}</td>
+        </tr>
+        <tr>
+            <td>git stash drop</td>
+            <td>Elimina un stash específico</td>
+            <td>Nombre del stash</td>
+            <td>git stash drop stash@{2}</td>
+        </tr>
+        <tr>
+            <td>git stash clear</td>
+            <td>Elimina todos los stashes</td>
+            <td>Ninguno</td>
+            <td>git stash clear</td>
+        </tr>
+    </table>
+</div>
+
+    <section>
+        <h2>Conclusión</h2>
+        <p>Los comandos de Git son una herramienta esencial para el control de versiones y la gestión de proyectos de desarrollo de software. En las tablas se ofrece una referencia rápida y completa para cada comando, sus parámetros y ejemplos de uso, en si estos comandos facilitan la creación, seguimiento y colaboración en proyectos, lo que mejora la eficiencia y la organización en el desarrollo de software, el conocer estos comandos es muy fundamental para cualquier desarrollador que trabaje con Git.</p>    </section>
+
+    <footer>
+        <p>Autor © 2023. Vázquez Carreón Víctor Manuel.</p>
+    </footer>
+            
+</body>
+</html>
